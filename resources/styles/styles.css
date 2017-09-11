@@ -1,3 +1,19 @@
 h1 {
   color: blue;
 }
+
+.pie {
+  border: 1px solid blue;
+  border-radius: 8px;
+  padding: 10px;
+  width: 25%;
+  background-color: LightGreen;
+}
+
+.album {
+  border: 1px solid blue;
+  border-radius: 8px;
+  padding: 10px;
+  width: 25%;
+  background-color: LightBlue;
+}

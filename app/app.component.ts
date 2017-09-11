@@ -1,14 +1,12 @@
-import { Component } from '@angular/core';
-
 @Component({
-  selector: 'my-app',
+  selector: 'my-thing',
   template: `
-  <div class="container">
-  <h1>My First Angular  App</h1>
-<div>
+    <h3 (click)="doStuff()"></h3>
   `
 })
 
-export class AppComponent {
+export class SomeComponent {
+  doStuff() {
 
+  }
 }
