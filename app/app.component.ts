@@ -1,12 +1,14 @@
+import { Component } from '@angular/core';
+
 @Component({
-  selector: 'my-thing',
+  selector: 'my-app',
   template: `
-    <h3 (click)="doStuff()"></h3>
+    <div *ngIf="thing">
+      <h1>Thing is true and therefore it is displayed!</h1>
+    </div>
   `
 })
 
-export class SomeComponent {
-  doStuff() {
-
-  }
+export class AppComponent {
+  thing = "something that is not false";
 }
