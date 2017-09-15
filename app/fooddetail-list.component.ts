@@ -4,8 +4,13 @@ import { FoodDetails } from './food-details.model';
 @Component({
   selector: 'food-list',
   template: `
-  <div *ngFor='let currentFoodDetails of childFoodDetalList'>
-    <button (click)='editButton(current)'>Error!!</button>
+  <select (change)="onChange($event.target.value)">
+  <option value="all">Show All</option>
+  <option value="isDone">500 Calories & Above </option>
+</select>
+  <div *ngFor='let currentFoodDetails of childFoodDetalList | foodpipe:selectedCompleteness'>
+
+    <button (click)='editButton(currentFoodDetails)'>Error!!</button>
   </div>
   `
 })

@@ -10,17 +10,31 @@ import { FoodDetails } from './food-details.model';
          [childFoodDetalList]="masterFoodList"
          (clickedButton)="showFoodDetails($event)"
       ></food-list>
+      <food-edit
+      [childselectedDetail]="selectedFood"
+      (clickedButton)="finishedEdit()"
+      ></food-edit>
+      <new-details
+       (newDetails)=addedTask($event)
+      ></new-details>
     </div>
 `
 })
 
 export class AppComponent {
   public masterFoodList: FoodDetails[] = [
-    new FoodDetails("Hamburger","Didn't get a soda or cheese on my burger!",354)
+    new FoodDetails("Hamburger", "Didn't get a soda or cheese on my burger!", 354)
   ];
 
   selectedFood: FoodDetails = null;
   showFoodDetails(clickedFood: FoodDetails) {
     this.selectedFood = clickedFood
   }
+
+  finishedEdit() {
+    this.selectedFood = null;
+  }
+  addedTask(newFood: FoodDetails) {
+   this.masterFoodList.push(newFood);
+ }
 }
