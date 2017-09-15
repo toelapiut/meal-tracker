@@ -1,11 +1,15 @@
 import { Component } from '@angular/core';
-import { FoodDetails} from './food-details.model';
+import { FoodDetails } from './food-details.model';
 
 @Component({
   selector: 'my-app',
   template: `
     <div>
-      <h1>Thing is true and therefore it is displayed!</h1>
+    <img src="../resources/images/logo_big.png">
+      <food-list
+         [childFoodDetalList]="masterFoodList"
+         (clickedButton)="showFoodDetails($event)"
+      ></food-list>
     </div>
 `
 })
