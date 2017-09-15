@@ -1,5 +1,5 @@
 {
-  "name": "template",
+  "name": "meal-tracker",
   "version": "1.0.0",
   "scripts": {
     "start": "tsc && concurrently \"npm run tsc:w\" \"npm run lite\" ",
@@ -55,5 +55,5 @@
     "url": "https://github.com/toelapiut/angular-temp/issues"
   },
   "homepage": "https://github.com/toelapiut/angular-temp#readme",
-  "description": ""
+  "description": "This is a repository for Angular 2 Template"
 }
