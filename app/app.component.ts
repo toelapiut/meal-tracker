@@ -1,40 +1,42 @@
 import { Component } from '@angular/core';
-import { FoodDetails } from './food-details.model';
+import { Meal } from './meal.model';
 
 @Component({
   selector: 'my-app',
   template: `
-    <div>
-    <img src="../resources/images/logo_big.png">
-      <food-list
-         [childFoodDetalList]="masterFoodList"
-         (clickedButton)="showFoodDetails($event)"
-      ></food-list>
-      <food-edit
-      [childselectedDetail]="selectedFood"
-      (clickedButton)="finishedEdit()"
-      ></food-edit>
-      <new-details
-       (newDetails)=addedTask($event)
-      ></new-details>
+
+  <div class="container" >
+<div background="../resources/images/feedmee.png">
+    <div class='image'>
+      <img src='../resources/images/feedmee.png'>
     </div>
-`
+  </div>
+  <div class="col-md-4">
+  <new-meal (newMealSender)="createMeal($event)"></new-meal>
+  </div>
+  <div class="col-md-4">
+    <meal-list [meals] = 'meals' (editButtonClickedSender)='editMeal($event)'></meal-list>
+  </div>
+  <div class="col-md-4">
+    <edit-meal (okayButtonSender)='changeSelectedMealValue($event)' [selectedMeal] = 'selectedMeal'></edit-meal>
+</div>
+</div>
+  `
 })
 
 export class AppComponent {
-  public masterFoodList: FoodDetails[] = [
-    new FoodDetails("Hamburger", "Didn't get a soda or cheese on my burger!", 354)
-  ];
+  public editFormVisible: boolean = false;
+  public meals: Meal[] = [
 
-  selectedFood: FoodDetails = null;
-  showFoodDetails(clickedFood: FoodDetails) {
-    this.selectedFood = clickedFood
+  ]
+  public selectedMeal: Meal = null;
+  editMeal(meal) {
+    this.selectedMeal = meal;
   }
-
-  finishedEdit() {
-    this.selectedFood = null;
+  createMeal(newMeal) {
+    this.meals.push(newMeal);
   }
-  addedTask(newFood: FoodDetails) {
-   this.masterFoodList.push(newFood);
- }
+  changeSelectedMealValue() {
+    this.selectedMeal = null;
+  }
 }
