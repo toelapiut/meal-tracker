@@ -17,7 +17,11 @@ import { Meal } from './meal.model';
       <label>Food Calories</label>
       <input #fcalories class="form-control">
     </div>
-    <button (click)="newMealCreate(fname.value, fdescription.value, fcalories.value)" class="btn btn-secondary">Add Food</button>
+    <button (click)="newMealCreate(fname.value, fdescription.value, fcalories.value)
+    (fname.value='',
+     fdescription.value='',
+      fcalories.value='')
+    " class="btn btn-success">Add Food</button>
   </div>
 
   `

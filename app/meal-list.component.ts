@@ -6,7 +6,7 @@ import { Meal } from './meal.model';
   template:`
   <div class="container-fluid">
     <div class="row">
-    <select (change)="onchange ($event.target.value)" class="selectpicker">
+    <select (change)="onchange ($event.target.value)" class="selectpicker" class="btn btn-info">
       <option value="all">All Items</option>
       <option value="more">More than 500 Calories</option>
       <option value="less">Less Than 500 Calories</option>
@@ -23,7 +23,7 @@ import { Meal } from './meal.model';
         <td>{{meal.name}}</td>
         <td> {{meal.description}}</td>
         <td>{{meal.calories}}</td>
-        <td><button (click)="editButtonClicked(meal)" class="btn btn-secondary">Edit</button><td>
+        <td><button (click)="editButtonClicked(meal)" class="btn btn-success">Edit</button><td>
         </tr>
       </table>
 

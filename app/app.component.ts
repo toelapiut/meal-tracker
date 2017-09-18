@@ -6,7 +6,7 @@ import { Meal } from './meal.model';
   template: `
 
   <div class="container" >
-<div background="../resources/images/feedmee.png">
+<div id="back">
     <div class='image'>
       <img src='../resources/images/feedmee.png'>
     </div>

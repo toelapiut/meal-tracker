@@ -1,12 +1,15 @@
 .image{
   text-align: center;
-  background-color: white;
   height: 250px;
   width:100%;
 }
 
-#back{
-  background-image: url('./images/back.jpg'); 
+body{
+  background-image: url('/resources/images/back.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+  color: white;
   padding: 0px;
   margin:0px;
 }
